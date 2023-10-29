@@ -9,9 +9,17 @@ Competition teams will build a Vietnamese language model capable of answering mu
 # <a name="installation"></a> Installation
 ## Sentence-Transformers
 
-Quick installation for `Sentence-Transformers`
+Quick installation for [Sentence-Transformers](https://huggingface.co/bkai-foundation-models/vietnamese-bi-encoder)
 ```
 pip install -U sentence-transformers==2.2.2
+```
+
+Manually download model cache for `Sentence-Transformers` in case of failed connection to the download directory
+```
+mkdir cache
+# Make sure you have git-lfs installed (https://git-lfs.com)
+git lfs install
+git clone https://huggingface.co/bkai-foundation-models/vietnamese-bi-encoder
 ```
 
 Example usage for `Sentence-Transformers`
@@ -33,7 +41,7 @@ embeddings = model.encode(sentences)
 conda install -c conda-forge openjdk=11
 ```
 
-Quick installation for `VNCoreNLP`
+Quick installation for [VNCoreNLP](https://github.com/vncorenlp/VnCoreNLP/tree/master)
 ```
 pip install py_vncorenlp
 ```
