@@ -17,6 +17,7 @@ pip install -U sentence-transformers==2.2.2
 Manually download model cache for `Sentence-Transformers` in case of failed connection to the download directory
 ```
 mkdir cache
+cd cache
 # Make sure you have git-lfs installed (https://git-lfs.com)
 git lfs install
 git clone https://huggingface.co/bkai-foundation-models/vietnamese-bi-encoder
