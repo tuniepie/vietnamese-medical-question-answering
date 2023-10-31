@@ -13,6 +13,16 @@ A library package for processing HTML documents
 pip install beautifulsoup4 lxml html5lib
 ```
 
+## Faiss (Facebook AI Similarity Search)
+Faiss default installation using cpu
+```
+conda install -c pytorch faiss-cpu
+```
+The `faiss-gpu` package provides CUDA-enabled indices:
+```
+conda install -c pytorch faiss-gpu
+```
+
 ## Sentence-Transformers
 
 Quick installation for [Sentence-Transformers](https://huggingface.co/bkai-foundation-models/vietnamese-bi-encoder)
