@@ -14,7 +14,7 @@ pip install beautifulsoup4 lxml html5lib
 ```
 
 ## Faiss (Facebook AI Similarity Search)
-Faiss default installation using cpu
+[Faiss](https://faiss.ai/index.html#) default installation for cpu
 ```
 conda install -c pytorch faiss-cpu
 ```
