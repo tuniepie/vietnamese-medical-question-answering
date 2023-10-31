@@ -7,6 +7,12 @@
 Competition teams will build a Vietnamese language model capable of answering multiple-choice questions (with one or more correct answers) in the medical field, based on the corpus provided by the organizers (more information in [here](https://challenge.kalapa.vn/portal/vietnamese-medical-question-answering/overview)).
 
 # <a name="installation"></a> Installation
+## BeautifulSoup
+A library package for processing HTML documents
+```
+pip install beautifulsoup4 lxml html5lib
+```
+
 ## Sentence-Transformers
 
 Quick installation for [Sentence-Transformers](https://huggingface.co/bkai-foundation-models/vietnamese-bi-encoder)
@@ -68,7 +74,7 @@ rdrsegmenter.word_segment(text)
 ```
 
 # <a name="baseline"></a> Baseline
-- Preprocessing corpus dataset (removing html tags, links, unnecessary characters, symbols, etc.).
+- Preprocessing corpus dataset by splitting the documents into different sub_docs based on their content with format {title_content_subcontent}.
 - Using TF-IDF method (linear kernel as the metrics) for preprocessing dataset to acquire the documents with the most similarity to the queries.
 - Using [BM25Okapi](https://ndquy.github.io/posts/okapi-bm-25-tim-kiem-tieng-viet/) to take out the top k sentences in the documents with the most similarity to the queries.
 - Using cosine similarity metrics to retrieve the final sentence with highest similarity score and the same for the options to get the final answers.
