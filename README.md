@@ -23,6 +23,29 @@ The `faiss-gpu` package provides CUDA-enabled indices:
 conda install -c pytorch faiss-gpu
 ```
 
+## BM25
+Quick installation for [BM25](https://github.com/dorianbrown/rank_bm25)
+```
+pip install rank_bm25 
+```
+
+Example usage for `BM25`
+```python
+from rank_bm25 import BM25Okapi
+
+# Tokenize corpus and initialize model BM25
+tokenized_corpus = [doc.split(" ") for doc in corpus]
+bm25 = BM25Okapi(tokenized_corpus)
+
+# Tokenize query
+tokenized_query = query.split(" ")
+
+# Retrieve the best documents
+bm25.get_top_n(tokenized_query, corpus, n=1)
+```
+
+Otherwise, class BM25 can be built manually (more details in [here](https://ndquy.github.io/posts/okapi-bm-25-tim-kiem-tieng-viet/))
+
 ## Sentence-Transformers
 
 Quick installation for [Sentence-Transformers](https://huggingface.co/bkai-foundation-models/vietnamese-bi-encoder)
@@ -86,5 +109,5 @@ rdrsegmenter.word_segment(text)
 # <a name="baseline"></a> Baseline
 - Preprocessing corpus dataset by splitting the documents into different sub_docs based on their content with format {title_content_subcontent}.
 - Using TF-IDF method (linear kernel as the metrics) for preprocessing dataset to acquire the documents with the most similarity to the queries.
-- Using [BM25Okapi](https://ndquy.github.io/posts/okapi-bm-25-tim-kiem-tieng-viet/) to take out the top k sentences in the documents with the most similarity to the queries.
+- Using BM25 to take out the top k sentences in the documents with the most similarity to the queries.
 - Using cosine similarity metrics to retrieve the final sentence with highest similarity score and the same for the options to get the final answers.
